@@ -19,7 +19,7 @@ images = digits.images
 labels = digits.target
 
 #Get our training data
-X_train, X_test, y_train, y_test = train_test_split(images, labels, test_size=0.6, shuffle=False)
+X_train, X_test, y_train, y_test = train_test_split(images, labels, train_size=0.7, shuffle=False)
 
 def dataset_searcher(number_list,images,labels):
   #insert code that when given a list of integers, will find the labels and images
@@ -40,11 +40,12 @@ def print_numbers(images,labels):
   #the code will plot the images and their labels in the title. 
   numList = labels
   fig, axs = plt.subplots(1, len(numList), figsize=(15,5))
+  index = 0
   for num, ax in zip(numList, axs):
-    index = np.where(labels == num)[0][0]
     # Display the image corresponding to the label
     ax.imshow(images[index], cmap="gray")
-    ax.set_title("Label " + str(num))
+    ax.set_title("Label: " + str(num))
+    index += 1
   plt.show()
 class_numbers = [2,0,8,7,5]
 #Part 1
