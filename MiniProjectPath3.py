@@ -40,12 +40,10 @@ def print_numbers(images,labels):
   #the code will plot the images and their labels in the title. 
   numList = labels
   fig, axs = plt.subplots(1, len(numList), figsize=(15,5))
-  index = 0
-  for num, ax in zip(numList, axs):
+  for index in range(len(numList)):
     # Display the image corresponding to the label
-    ax.imshow(images[index], cmap="gray")
-    ax.set_title("Label: " + str(num))
-    index += 1
+    axs[index].imshow(images[index], cmap="gray")
+    axs[index].set_title("Label: " + str(numList[index]))
   plt.show()
 class_numbers = [2,0,8,7,5]
 #Part 1
