@@ -19,7 +19,7 @@ images = digits.images
 labels = digits.target
 
 #Get our training data
-X_train, X_test, y_train, y_test = train_test_split(images, labels, train_size=0.7, shuffle=False)
+X_train, X_test, y_train, y_test = train_test_split(images, labels, train_size=0.4, shuffle=False)
 
 def dataset_searcher(number_list,images,labels):
   #insert code that when given a list of integers, will find the labels and images
